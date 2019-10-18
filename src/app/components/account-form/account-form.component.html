@@ -1,0 +1,60 @@
+<div class="container">
+  <form [formGroup]="accountForm" (ngSubmit)="submit()">
+    <h1 *ngIf="this.formContext == 'ADD'">Add account:</h1>
+    <h1 *ngIf="formContext == 'EDIT'">Edit account:</h1>
+    <div class="form-group">
+      <label>Account name:</label>
+      <input type="text" formControlName="name" required />
+    </div>
+    <div class="form-group">
+      <label>Account number:</label>
+      <input
+        type="text"
+        name="accountNumber"
+        formControlName="number"
+        required
+        (input)="clearErrorMsg()"
+      />
+    </div>
+    <div class="form-group">
+      <label>Currency:</label>
+      <select formControlName="currency">
+        <option value="PLN">PLN</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Bank name:</label>
+      <input type="text" formControlName="bankName" required />
+    </div>
+
+    <button *ngIf="formContext == 'ADD'" type="submit">Add</button>
+    <button *ngIf="formContext == 'EDIT'" type="submit">Edit</button>
+    <button *ngIf="formContext == 'EDIT'" (click)="back()">Back</button>
+  </form>
+</div>
+
+<div
+  *ngIf="
+    submitted &&
+    (form.name.errors ||
+      form.number.errors ||
+      form.currency.errors ||
+      form.bankName.errors ||
+      errorMsg)
+  "
+  class="error-validation container"
+>
+  <p *ngIf="form.name.errors">Account name is required</p>
+  <p *ngIf="form.number.errors || form.number.errors">
+    Account number is required (26 digits)
+  </p>
+  <p *ngIf="form.currency.errors">Currency is required</p>
+  <p *ngIf="form.bankName.errors">Bank name is required</p>
+  <p *ngIf="errorMsg">{{ errorMsg }}</p>
+</div>
+
+<div *ngIf="success" class="container sucessfull-msg">
+  <p>{{ success }}</p>
+</div>

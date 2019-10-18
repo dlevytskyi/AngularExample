@@ -1,0 +1,76 @@
+@import '../../styles/vars.scss';
+
+header {
+  color: #ffffff;
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  line-height: 18px;
+  min-height: 2em;
+}
+
+#logo {
+  padding: 0;
+  margin: 0;
+  float: left;
+  font-size: 24px;
+  text-transform: uppercase;
+
+  @include sm {
+    margin: 20px 0px 20px 0px;
+  }
+
+  img {
+    width: 68px;
+    display: inline-block;
+    filter: invert(10%) sepia(95%) saturate(6697%) hue-rotate(2deg) brightness(100%) contrast(112%);
+  }
+
+  p {
+    margin: 25px 0px 25px 10px;
+    float: right;
+  }
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+  margin-top: 1.5rem;
+  position: relative;
+
+  @include sm {
+    margin: 1rem;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 2em;
+
+    @include sm {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  @include sm {
+    display: block;
+    vertical-align: middle;
+  }
+}

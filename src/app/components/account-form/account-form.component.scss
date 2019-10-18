@@ -1,0 +1,64 @@
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .form-group {
+    label {
+      font-size: 24px;
+      display: block;
+    }
+
+    input {
+      font-size: 24px;
+      width: 40vw;
+      min-width: 250px;
+      margin: 10px 0px;
+      outline: none;
+      padding: 0;
+
+    }
+
+    select {
+      font-size: 24px;
+      width: 200px;
+      margin: 10px 0px;
+    }
+
+  }
+
+  button {
+    width: 254px;
+    transition: 0.3s ease;
+    margin: 5px;
+    margin-right: 5px;
+
+    &:hover {
+      color: rgb(24, 204, 24);
+      ;
+    }
+  }
+}
+
+.error-validation {
+  border: 1px solid red;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 2rem;
+
+  p {
+    margin: 1rem;
+  }
+}
+
+.sucessfull-msg {
+  border: 1px solid rgb(24, 204, 24);
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 2rem;
+
+  p {
+    margin: 1rem;
+  }
+}

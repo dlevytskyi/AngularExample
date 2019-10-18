@@ -1,0 +1,23 @@
+<header>
+  <div class="container">
+    <div id="logo">
+      <img src="../../../assets/img/pigLogo.svg" alt="logoImg" />
+      <p class="disable-select">logo</p>
+    </div>
+    <nav>
+      <ul class="navbar">
+        <li><a routerLink="">Home</a></li>
+        <li><a routerLink="/accounts">Accounts</a></li>
+        <li *ngIf="this.authenticationService.currentUserValue">
+          <a routerLink="/add-account">Add account</a>
+        </li>
+        <li *ngIf="!this.authenticationService.currentUserValue">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="this.authenticationService.currentUserValue">
+          <a routerLink="" (click)="this.authenticationService.logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

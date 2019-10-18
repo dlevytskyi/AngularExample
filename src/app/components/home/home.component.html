@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="welcome-msg">
+    <h1>Welcome on home page!</h1>
+  </div>
+  <div *ngIf="this.authenticationService.currentUserValue" class="notificationMsg">
+    <p>You can manage your accounts. Have fun!</p>
+  </div>
+
+  <div *ngIf="!this.authenticationService.currentUserValue" class="notificationMsg">
+    <p>Hello there! To be able to manage your accounts you should login first.</p>
+    <p id="username">Username: admin</p>
+    <p id="password">Password: password</p>
+  </div>
+</div>

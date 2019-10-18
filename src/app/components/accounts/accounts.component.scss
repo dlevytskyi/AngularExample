@@ -1,0 +1,42 @@
+.accounts-list {
+  margin-top: 30px;
+  padding-bottom: 70px;
+}
+
+.account {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: 0.5s ease;
+
+  h1 {
+    margin: 0px;
+  }
+
+  &:hover {
+    border: 2px solid red;
+  }
+
+  .account-controls {
+    button {
+      background-color: rgb(0, 0, 0, 0.1);
+      color: black;
+      margin-left: 5px;
+      height: 100%;
+      font-size: 1.25rem;
+      border-radius: 3px;
+      text-transform: capitalize;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: rgb(0, 0, 0, 0.3);
+      }
+
+      &:disabled {
+        background-color: rgb(0, 0, 0, 0.3);
+        cursor: auto;
+      }
+    }
+  }
+}

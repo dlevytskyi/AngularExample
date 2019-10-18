@@ -1,0 +1,42 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+  <div id="login-form">
+    <h1>login</h1>
+    <div class="textbox">
+      <input
+        type="text"
+        name="username"
+        placeholder="YOUR USERNAME"
+        required
+        formControlName="username"
+        [ngClass]="{ invalid: submitted && (form.username.errors || errorMsg) }"
+        (input)="clearErrorMsg()"
+      />
+    </div>
+    <div class="textbox">
+      <input
+        type="password"
+        name="password"
+        placeholder="YOUR PASS"
+        required
+        formControlName="password"
+        [ngClass]="{ invalid: submitted && (form.password.errors || errorMsg) }"
+        (input)="clearErrorMsg()"
+      />
+    </div>
+    <div class="sbn-btn">
+      <button type="submit">login</button>
+    </div>
+  </div>
+</form>
+
+<div
+  *ngIf="submitted && (form.password.errors || form.username.errors || errorMsg)"
+  class="error-validation container"
+>
+  <p *ngIf="form.username.errors">Username is required</p>
+  <p *ngIf="form.password.errors && form.password.errors.required">Password is required</p>
+  <p *ngIf="form.password.errors && form.password.errors.minlength">
+    Minimum password length 8 symbols
+  </p>
+  <p *ngIf="errorMsg">{{ errorMsg }}</p>
+</div>

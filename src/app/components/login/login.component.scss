@@ -1,0 +1,55 @@
+.error-validation {
+  border: 1px solid red;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 2rem;
+  text-decoration: b;
+
+  p {
+    margin: 1rem;
+  }
+}
+
+#login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'Roboto-light';
+  }
+
+  input {
+    border: 1px solid;
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 3px 0;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .invalid {
+    border: 1px solid red;
+  }
+
+  button {
+    margin: 10px 0;
+    width: 100%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: rgb(24, 204, 24);
+    }
+  }
+}

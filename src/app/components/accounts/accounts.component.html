@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="accounts-list">
+    <div *ngFor="let account of accounts" class="account">
+      <div class="account-info">
+        <h1>{{ account.name }}</h1>
+        <p><i class="fa fa-money"></i> Number: {{ account.number }}</p>
+        <p><i class="fa fa-globe"></i> Currency: {{ account.currency }}</p>
+        <p><i class="fa fa-university"></i> Bank: {{ account.bankName }}</p>
+      </div>
+      <div class="account-controls">
+        <button
+          [attr.disabled]="!this.authenticationService.currentUserValue ? '' : null"
+          (click)="editAccount(account.id)"
+        >
+          <i class="fa fa-edit"></i> edit
+        </button>
+        <button
+          [attr.disabled]="!this.authenticationService.currentUserValue ? '' : null"
+          (click)="deleteAccount(account.id)"
+        >
+          <i class="fa fa-trash"></i> delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
