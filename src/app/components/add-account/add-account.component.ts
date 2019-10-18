@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-account.component.scss']
 })
 export class AddAccountComponent implements OnInit {
-  private context = 'ADD';
+  public context = 'ADD';
   constructor() {}
 
   ngOnInit() {}

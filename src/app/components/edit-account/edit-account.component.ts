@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-account.component.scss']
 })
 export class EditAccountComponent implements OnInit {
-  private context = 'EDIT';
+  public context = 'EDIT';
 
   constructor() {}
 

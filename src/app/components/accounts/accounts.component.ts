@@ -18,7 +18,7 @@ export class AccountsComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private authenticationService: AuthenticationService,
+    public authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
