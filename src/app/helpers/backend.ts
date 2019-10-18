@@ -81,7 +81,7 @@ export class Backend implements HttpInterceptor {
     }
 
     function loggedIn() {
-      return headers.get('Authorization') == `Basic ${Md5.hashStr('root:12345678')}`;
+      return headers.get('Authorization') == `Basic ${Md5.hashStr('admin:password')}`;
     }
 
     function unauthorized() {

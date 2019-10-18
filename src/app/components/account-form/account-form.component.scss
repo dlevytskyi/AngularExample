@@ -15,9 +15,13 @@ form {
       width: 40vw;
       min-width: 250px;
       margin: 10px 0px;
-      outline: none;
       padding: 0;
+      border: 1px solid;
+      border-radius: 3px;
 
+      &:focus {
+        outline: none;
+      }
     }
 
     select {
